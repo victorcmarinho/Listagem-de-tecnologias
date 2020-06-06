@@ -8,7 +8,15 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const repositories = [];
+const repositories = [
+  {
+    id: uuid(),
+    title: 'Titulo',
+    url: 'https://google.com.br',
+    techs: ['React'],
+    likes: 0
+  }
+];
 
 app.get("/repositories", (request, response) => {
     return response.json(repositories);
